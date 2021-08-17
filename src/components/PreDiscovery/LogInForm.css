@@ -1,0 +1,42 @@
+.login__control {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(221, 221, 236);
+}
+.login__controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  height: 300px;
+  margin: 130px;
+}
+.login__controls__input__email {
+  margin: 40px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  height: 30px;
+}
+.login__controls__input__password {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  height: 30px;
+}
+.login__controls button {
+  background-color: rgba(106, 108, 141, 0.788);
+  border-radius: 10px;
+  height: 30px;
+  width: 180px;
+}
+login__controls_actions button {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+}
