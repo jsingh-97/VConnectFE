@@ -1,17 +1,30 @@
 import Header from "../UI/Header";
 import LogInForm from "./LogInForm";
-import SignUpForm from "./SignUpForm"
-import {useState} from "react";
+import SignUpForm from "./SignUpForm";
+import { useState } from "react";
+import Feed from "../HomePage/Feed";
 function Login() {
-  console.log("Inside login");
-  const [signUp,setSignUp] = useState(false);
-  const createAccountHandler= ()=>{
+  const [signUp, setSignUp] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const loggedInHandler = () => {
+    console.log("You  are logged in");
+    setLoggedIn(true);
+  };
+  const createAccountHandler = () => {
     setSignUp(true);
-  }
+  };
   return (
     <div>
-      <Header />
-      {signUp ?<SignUpForm/>:<LogInForm createAccount={createAccountHandler}></LogInForm>}
+      {loggedIn ? (
+        <Feed></Feed>
+      ) : signUp ? (
+        <SignUpForm />
+      ) : (
+        <LogInForm
+          createAccount={createAccountHandler}
+          loggedIn={loggedInHandler}
+        ></LogInForm>
+      )}
     </div>
   );
 }

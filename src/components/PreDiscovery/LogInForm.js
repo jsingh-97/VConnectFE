@@ -1,8 +1,9 @@
 import "./LogInForm.css";
+
 function LogInForm(props) {
   return (
     <div className="login__control">
-      <form>
+      <form onSubmit={props.loggedIn}>
         <div className="login__controls">
           <input
             type="text"
