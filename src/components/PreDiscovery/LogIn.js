@@ -1,31 +1,24 @@
-import Header from "../UI/Header";
 import LogInForm from "./LogInForm";
 import SignUpForm from "./SignUpForm";
-import { useState } from "react";
+import React, { useState } from "react";
 import Feed from "../HomePage/Feed";
-function Login() {
-  const [signUp, setSignUp] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
-  const loggedInHandler = () => {
-    console.log("You  are logged in");
-    setLoggedIn(true);
-  };
-  const createAccountHandler = () => {
-    setSignUp(true);
+import Card from "../UI/Card";
+function Login(props) {
+  const [signup, setSignup] = useState(false);
+  const signupHandler = () => {
+    console.log("signing in !!!");
+    setSignup(true);
   };
   return (
-    <div>
-      {loggedIn ? (
+    <React.Fragment>
+      {props.isLoggedin ? (
         <Feed></Feed>
-      ) : signUp ? (
+      ) : signup ? (
         <SignUpForm />
       ) : (
-        <LogInForm
-          createAccount={createAccountHandler}
-          loggedIn={loggedInHandler}
-        ></LogInForm>
+        <LogInForm onSignup={signupHandler} onLogin={props.onLogin}></LogInForm>
       )}
-    </div>
+    </React.Fragment>
   );
 }
 

@@ -1,25 +1,28 @@
-import "./LogInForm.css";
-
+import Card from "../UI/Card";
+import classes from "./LogInForm.module.css";
+import Button from "../UI/Button";
 function LogInForm(props) {
   return (
-    <div className="login__control">
-      <form onSubmit={props.loggedIn}>
-        <div className="login__controls">
-          <input
-            type="text"
-            className="login__controls__input__email"
-            placeholder="Email"
-          ></input>
-          <input
-            type="text"
-            className="login__controls__input__password"
-            placeholder="password"
-          ></input>
-          <button onClick={props.createAccount}>Create Account</button>
-          <button type="submit">Login</button>
+    <Card className={classes.login}>
+      <form onSubmit={props.onLogin}>
+        <div className={`${classes.control}`}>
+          <label htmlFor="email">E-Mail</label>
+          <input type="text" placeholder="Email"></input>
+        </div>
+        <div className={`${classes.control}`}>
+          <label htmlFor="password">Password</label>
+          <input type="text" placeholder="password"></input>
+        </div>
+        <div className={classes.actions}>
+          <Button type="submit" className={classes.btn}>
+            Login
+          </Button>
+          <Button onClick={props.onSignup} className={classes.btn}>
+            Signup
+          </Button>
         </div>
       </form>
-    </div>
+    </Card>
   );
 }
 export default LogInForm;
