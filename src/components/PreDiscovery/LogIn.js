@@ -6,7 +6,6 @@ import Card from "../UI/Card";
 function Login(props) {
   const [signup, setSignup] = useState(false);
   const signupHandler = () => {
-    console.log("signing in !!!");
     setSignup(true);
   };
   return (
