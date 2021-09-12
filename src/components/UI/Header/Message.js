@@ -1,4 +1,4 @@
 function Message(props) {
-  return <h1>Please verify your email address and login again</h1>;
+  return <h1>{props.children}</h1>;
 }
 export default Message;

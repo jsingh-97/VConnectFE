@@ -5,11 +5,11 @@ import AuthContext from "./store/auth-context";
 function App() {
   const [isLoggedin, setIsLoggedin] = useState(false);
   const onLogoutHandler = () => {
+    console.log("Logged out");
     setIsLoggedin(false);
   };
-  const onLoginHandler = () => {
+  const onLoginHandler = async () => {
     setIsLoggedin(true);
-    console.log("signed in");
   };
   return (
     <AuthContext.Provider
