@@ -12,7 +12,7 @@ function LogInForm(props) {
   const onLoginHandler = async (event) => {
     event.preventDefault();
     const response = await fetch(
-      `http://bigbull.ap-south-1.elasticbeanstalk.com:5000/auth/user?email=${emailInputRef.current.value}&password=${passwordInputRef.current.value}`,
+      `http://vconnect.ap-south-1.elasticbeanstalk.com/auth/user?email=${emailInputRef.current.value}&password=${passwordInputRef.current.value}`,
       {
         method: "GET",
         headers: {

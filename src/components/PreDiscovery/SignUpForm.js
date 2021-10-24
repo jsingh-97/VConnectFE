@@ -11,7 +11,7 @@ function SignUpForm(props) {
   const onFormSentHandler = async (event) => {
     event.preventDefault();
     const response = await fetch(
-      "http://bigbull.ap-south-1.elasticbeanstalk.com:5000/auth/user",
+      "http://vconnect.ap-south-1.elasticbeanstalk.com/auth/user",
       {
         method: "POST",
         body: JSON.stringify({
